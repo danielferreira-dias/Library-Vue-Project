@@ -4,7 +4,7 @@
   <div class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
     Book for Passion
   </div>
-  <div class="libraryBody">
+  <div class="flex flex-row gap-10 flex-wrap p-5 justify-center">
     <LibraryList>
     </LibraryList>
   </div>

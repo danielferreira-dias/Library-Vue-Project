@@ -1,17 +1,22 @@
 <template>
-    <h1>Main Info</h1>    
+    <div class="flex">
+        <div class="">
+
+        </div>
+        <div class="flex">
+            <h1 class="text-4xl">The Page of the Book {{ id }}</h1>
+        </div>
+    </div>
 </template>
 
 <script>
 export default{
+    props: ['id'],
     name: 'BookDetails',
-    data(){
-        return {
-            bookID: this.$route.params.id
-        }
-    }
 }
 </script>
 
 <style>
+
+
 </style>

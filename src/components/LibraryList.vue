@@ -1,6 +1,6 @@
 <template>
     <div v-for="(item, index) in filteredBooks" :key="index" class="card transition ease-in-out delay-0 hover:translate-y-1 hover:scale-110 duration-300 ">
-            <router-link :to="{ name: 'BookDetails' , params: { id: item.bookID }}">
+            <router-link :to="{ name: 'BookDetails' , params: { id: item.bookID, book: item }}">
                 <div class="card-title">
                     <h2 style="color: white;"> {{ item.name }}</h2>
                 </div>
@@ -60,6 +60,9 @@ export default{
                     numberOfReviews: 60,
                     bookFavorited: false,
                     bookID: 1,
+                    comments: [ {user:"User 1", comment: "Great Book", rating: 4},
+                        {user:"User 2", comment: "I enjoyed reading it.", rating: 3},
+                    ],
                 },
                 {
                     name: "Book of Water",
@@ -71,6 +74,9 @@ export default{
                     numberOfReviews: 32,
                     bookFavorited: false,
                     bookID: 2,
+                    comments: [ {user:"User 1", comment: "Great Book", rating: 4},
+                        {user:"User 2", comment: "I enjoyed reading it.", rating: 3},
+                    ],
                 },
                 {
                     name: "Book of Earth",
@@ -82,6 +88,9 @@ export default{
                     numberOfReviews: 14,
                     bookFavorited: false,
                     bookID: 3,
+                    comments: [ {user:"User 1", comment: "Great Book", rating: 4},
+                        {user:"User 2", comment: "I enjoyed reading it.", rating: 3},
+                    ],
                 },
                 {
                     name: "Book of Fire",
@@ -93,6 +102,9 @@ export default{
                     numberOfReviews: 109,
                     bookFavorited: false,
                     bookID: 4,
+                    comments: [ {user:"User 1", comment: "Great Book", rating: 4},
+                        {user:"User 2", comment: "I enjoyed reading it.", rating: 3},
+                    ],
                 },
                 {
                     name: "Book of Fire",
@@ -104,6 +116,9 @@ export default{
                     numberOfReviews: 204,
                     bookFavorited: false,
                     bookID: 5,
+                    comments: [ {user:"User 1", comment: "Great Book", rating: 4},
+                        {user:"User 2", comment: "I enjoyed reading it.", rating: 3},
+                    ],
                 },
                 {
                     name: "Book of Fire",
@@ -115,6 +130,9 @@ export default{
                     numberOfReviews: 78,
                     bookFavorited: true,
                     bookID: 6,
+                    comments: [ {user:"User 1", comment: "Great Book", rating: 4},
+                        {user:"User 2", comment: "I enjoyed reading it.", rating: 3},
+                    ],
                 }
                 
             ]

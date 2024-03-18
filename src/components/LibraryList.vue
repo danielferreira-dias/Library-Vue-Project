@@ -1,5 +1,5 @@
 <template>
-        <div v-for="(item, index) in books" :key="index" class="card transition ease-in-out delay-0 hover:translate-y-1 hover:scale-110 duration-300 ">
+        <div v-for="(item, index) in topFiveBooks" :key="index" class="card transition ease-in-out delay-0 hover:translate-y-1 hover:scale-110 duration-300 ">
             <div class="card-title">
                 <h2 style="color: white;"> {{ item.name }}</h2>
             </div>
@@ -33,6 +33,12 @@
 <script>
 export default{
     name: 'Library',
+    props:{
+        topFive: {
+            type: Boolean,
+            required: true
+        }
+    },
     data(){
         return {
             books: [
@@ -42,8 +48,8 @@ export default{
                     author: "Lorem Ipsum",
                     img_url: "src/assets/book_image_one.png",
                     alt: "Book Picture",
-                    rating: 5,
-                    numberOfReviews: 1,
+                    rating: 4.5,
+                    numberOfReviews: 60,
                 },
                 {
                     name: "Book of Water",
@@ -51,8 +57,8 @@ export default{
                     author: "Lorem Ipsum",
                     img_url: "src//assets/book_image_two.png",
                     alt: "Book Picture",
-                    rating: 5,
-                    numberOfReviews: 1,
+                    rating: 4.1,
+                    numberOfReviews: 32,
                 },
                 {
                     name: "Book of Earth",
@@ -61,7 +67,7 @@ export default{
                     img_url: "src//assets/book_image_one.png",
                     alt: "Book Picture",
                     rating: 5,
-                    numberOfReviews: 1,
+                    numberOfReviews: 14,
                 },
                 {
                     name: "Book of Fire",
@@ -69,11 +75,42 @@ export default{
                     author: "Lorem Ipsum",
                     img_url: "src//assets/book_image_two.png",
                     alt: "Book Picture",
-                    rating: 5,
-                    numberOfReviews: 3,
+                    rating: 2,
+                    numberOfReviews: 109,
                 },
+                {
+                    name: "Book of Fire",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    author: "Lorem Ipsum",
+                    img_url: "src//assets/book_image_two.png",
+                    alt: "Book Picture",
+                    rating: 4,
+                    numberOfReviews: 204,
+                },
+                {
+                    name: "Book of Fire",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    author: "Lorem Ipsum",
+                    img_url: "src//assets/book_image_two.png",
+                    alt: "Book Picture",
+                    rating: 3.4,
+                    numberOfReviews: 78,
+                }
+                
             ]
         }
+    },
+    computed: {
+        topFiveBooks(){
+            if (this.topFive) {
+                // Sort books based on rating
+                const sortedBooks = this.books.sort((a, b) => b.rating - a.rating);
+                // Return top 5 books
+                return sortedBooks.slice(0, 5);
+            } else {
+                return this.books;
+            }
+    }
     }
 }
 </script>

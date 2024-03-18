@@ -122,7 +122,7 @@ export default{
 @import 'tailwindcss/utilities';
 
 .card {
-    background-color: rgb(33, 33, 33);
+    background-color: rgb(194, 194, 194);
     width: 510px;
     border-radius: 10px;
 }
@@ -153,6 +153,10 @@ export default{
     text-align: left;
     justify-content: left;
     font-size: 1.0rem;
+}
+
+.card-body-description > p {
+    color: white;
 }
 
 .card-footer {

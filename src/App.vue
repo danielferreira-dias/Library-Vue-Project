@@ -1,16 +1,16 @@
 <template>
   <Navbar>
   </Navbar>
-  <div class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+  <div class="mb-4 text-4xl leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black">
     Book for Passion
   </div>
-  <div class="text-3xl text-left text-white p-5 ml-1">
+  <div class="text-3xl text-left text-black p-5 ml-1">
     Top 5 most well Reviewed
   </div>
   <div class=" w-full flex flex-row gap-10 flex-wrap p-5 justify-start mx-auto">
     <LibraryList :topFive="true" />
   </div>
-  <div class="text-3xl text-left text-white p-5 ml-1">
+  <div class="text-3xl text-left text-black p-5 ml-1">
     Your Library
   </div>
   <div class="flex w-full m-auto ">

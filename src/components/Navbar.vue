@@ -69,8 +69,8 @@
   }
 
   .navbar-Option > button {
-    background-color: #0f0e0e;
-    color: white;
+    background-color: #ffffff;
+    color: black;
     padding: 5px 15px;
     border-width: 0;
     border-right: 1px solid white; 

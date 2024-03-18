@@ -1,11 +1,10 @@
 <template>
-    <div class="flex"> Main Info </div>
-    <div class="flex"> Description Info </div>
+    <div class="flex"> This is an About Page </div>
 </template>
 
 <script>
 export default{
-    name: 'BookPage',
+    name: 'About',
     data(){
         return {}
     }

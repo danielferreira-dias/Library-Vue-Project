@@ -8,7 +8,11 @@
               <button>Home</button>
           </div>
           <div class="navbar-Option">
-              <button>About</button>
+              <button>
+                <router-link :to="{ name: 'About'}">
+                  About
+                </router-link>
+              </button>
           </div>
           <div class="navbar-Option">
               <button>Contact</button>

@@ -57,7 +57,7 @@
   .navBar-Border{
     width: 20%;
     border-width: 0px;
-    border-bottom: 1px groove rgba(255, 255, 255, 0.5); /* Border color with reduced opacity */
+    border-bottom: 1px groove rgba(69, 69, 69, 0.5); /* Border color with reduced opacity */
     border-style: groove;
     margin: auto;
   }

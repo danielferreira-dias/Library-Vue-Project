@@ -1,5 +1,5 @@
 <template>
-        <div v-for="(item, index) in topFiveBooks" :key="index" class="card transition ease-in-out delay-0 hover:translate-y-1 hover:scale-110 duration-300 ">
+        <div v-for="(item, index) in filteredBooks" :key="index" class="card transition ease-in-out delay-0 hover:translate-y-1 hover:scale-110 duration-300 ">
             <div class="card-title">
                 <h2 style="color: white;"> {{ item.name }}</h2>
             </div>
@@ -21,10 +21,12 @@
                     <a href="#" class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">{{ item.numberOfReviews }}</a>
                 </div>
                 <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" :fill="item.bookFavorited ? 'red' : 'none'" stroke="red" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                     </svg>
-                    <p class="ms-2 text-sm font-bold text-gray-900 dark:text-white">Add to Favorites</p>
+                    <p class="ms-2 text-sm font-bold text-gray-900 dark:text-white">
+                        {{ item.bookFavorited ? 'Remove from Favorite' : 'Add to Favorite' }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -35,6 +37,10 @@ export default{
     name: 'Library',
     props:{
         topFive: {
+            type: Boolean,
+            required: true
+        },
+        topFavorite: {
             type: Boolean,
             required: true
         }
@@ -50,6 +56,7 @@ export default{
                     alt: "Book Picture",
                     rating: 4.5,
                     numberOfReviews: 60,
+                    bookFavorited: false,
                 },
                 {
                     name: "Book of Water",
@@ -59,6 +66,7 @@ export default{
                     alt: "Book Picture",
                     rating: 4.1,
                     numberOfReviews: 32,
+                    bookFavorited: false,
                 },
                 {
                     name: "Book of Earth",
@@ -68,6 +76,7 @@ export default{
                     alt: "Book Picture",
                     rating: 5,
                     numberOfReviews: 14,
+                    bookFavorited: false,
                 },
                 {
                     name: "Book of Fire",
@@ -77,6 +86,7 @@ export default{
                     alt: "Book Picture",
                     rating: 2,
                     numberOfReviews: 109,
+                    bookFavorited: false,
                 },
                 {
                     name: "Book of Fire",
@@ -86,6 +96,7 @@ export default{
                     alt: "Book Picture",
                     rating: 4,
                     numberOfReviews: 204,
+                    bookFavorited: false,
                 },
                 {
                     name: "Book of Fire",
@@ -95,22 +106,23 @@ export default{
                     alt: "Book Picture",
                     rating: 3.4,
                     numberOfReviews: 78,
+                    bookFavorited: true,
                 }
                 
             ]
         }
     },
     computed: {
-        topFiveBooks(){
+        filteredBooks() {
             if (this.topFive) {
-                // Sort books based on rating
-                const sortedBooks = this.books.sort((a, b) => b.rating - a.rating);
-                // Return top 5 books
-                return sortedBooks.slice(0, 5);
+              return this.books.sort((a, b) => b.rating - a.rating).slice(0, 5);
+            } else if (this.topFavorite) {
+              return this.books.filter(book => book.bookFavorited);
             } else {
-                return this.books;
+              // Return all books
+              return this.books;
             }
-    }
+        }
     }
 }
 </script>
@@ -122,7 +134,7 @@ export default{
 @import 'tailwindcss/utilities';
 
 .card {
-    background-color: rgb(194, 194, 194);
+    background-color: rgb(159, 159, 159);
     width: 510px;
     border-radius: 10px;
 }

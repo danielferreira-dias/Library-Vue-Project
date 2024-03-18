@@ -4,9 +4,11 @@
   <div class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
     Book for Passion
   </div>
-  <div class="flex flex-row gap-10 flex-wrap p-5 justify-center">
-    <LibraryList>
-    </LibraryList>
+  <div class="flex w-full m-auto ">
+    <div class=" w-full flex flex-row gap-10 flex-wrap p-5 justify-start mx-auto">
+      <LibraryList />
+    </div>
+
   </div>
 </template>
 

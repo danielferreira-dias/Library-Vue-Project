@@ -1,20 +1,25 @@
 <template>
     <div class="navbar">
         <div class="navbar-Option">
-            <button>Home</button>
+          <img src="../assets/vue.svg" alt="">
         </div>
-        <div class="navbar-Option">
-            <button>About</button>
-        </div>
-        <div class="navbar-Option">
-            <button>Contact</button>
-        </div>
-        <div v-if="userIsLogged" class="navbar-Option">
-            <p>Welcome {{ user.name }}</p>
+        <div class="navbar-Option-Right">
+          <div class="navbar-Option">
+              <button>Home</button>
+          </div>
+          <div class="navbar-Option">
+              <button>About</button>
+          </div>
+          <div class="navbar-Option">
+              <button>Contact</button>
+          </div>
+          <div v-if="userIsLogged" class="navbar-Option">
+              <p>Welcome {{ user.name }}</p>
+          </div>
         </div>
     </div>
     <!-- <div class="navBar-Border"></div> -->
-  </template>
+</template>
   
   <script>
   export default {
@@ -37,11 +42,16 @@
     width: 100%;
     margin-right: 5px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding-bottom: 30px;
+  }
+
+  .navbar-Option-Right{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .navBar-Border{
@@ -69,6 +79,10 @@
 
   .navbar-Option > button:hover {
     background-color: #333333;
+  }
+
+  .navbar-Option > img {
+    padding: 5px 15px;
   }
 
 

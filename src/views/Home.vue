@@ -8,27 +8,27 @@
         Top 5 most well Reviewed
       </div>
       
-      <div class="library-grid">
+      <div class="mb-10">
         <!-- Display Top 5 most well-reviewed books -->
         <LibraryList :topFive="true" :topFavorite="false"/>
       </div>
     </div>
     
-    <div class="">
+    <div class="mb-10">
         <div class="text-3xl text-left text-black p-6 ml-1">
           Your Library
         </div>
-        <div class="library-grid">
+        <div class="">
           <!-- Display Your Library -->
           <LibraryList :topFive="false" :topFavorite="false"/>
         </div>
     </div>
 
-    <div class="">
+    <div class="mb-10">
         <div class="text-3xl text-left text-black p-6 ml-1">
           Your Favorites
         </div>
-        <div class="library-grid mb-10">
+        <div class="">
           <!-- Display Your Library -->
           <LibraryList :topFive="false" :topFavorite="true"/>
         </div>

@@ -1,0 +1,142 @@
+{
+    "books": [
+        {
+            "name": "Book of Wisdom",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "author": "Lorem Ipsum",
+            "img_url": "src/assets/book_image_one.png",
+            "alt": "Book Picture",
+            "rating": 4.5,
+            "numberOfReviews": 60,
+            "bookFavorited": false,
+            "id": 1,
+            "comments": [
+                {
+                    "user": "User 1",
+                    "comment": "Great Book",
+                    "rating": 4
+                },
+                {
+                    "user": "User 2",
+                    "comment": "I enjoyed reading it.",
+                    "rating": 3
+                }
+            ]
+        },
+        {
+            "name": "Book of Water",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "author": "Lorem Ipsum",
+            "img_url": "src/assets/book_image_two.png",
+            "alt": "Book Picture",
+            "rating": 4.1,
+            "numberOfReviews": 32,
+            "bookFavorited": false,
+            "id": 2,
+            "comments": [
+                {
+                    "user": "User 1",
+                    "comment": "Great Book",
+                    "rating": 4
+                },
+                {
+                    "user": "User 2",
+                    "comment": "I enjoyed reading it.",
+                    "rating": 3
+                }
+            ]
+        },
+        {
+            "name": "Book of Earth",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "author": "Lorem Ipsum",
+            "img_url": "src/assets/book_image_one.png",
+            "alt": "Book Picture",
+            "rating": 5,
+            "numberOfReviews": 14,
+            "bookFavorited": false,
+            "id": 3,
+            "comments": [
+                {
+                    "user": "User 1",
+                    "comment": "Great Book",
+                    "rating": 4
+                },
+                {
+                    "user": "User 2",
+                    "comment": "I enjoyed reading it.",
+                    "rating": 3
+                }
+            ]
+        },
+        {
+            "name": "Book of Fire",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "author": "Lorem Ipsum",
+            "img_url": "src/assets/book_image_two.png",
+            "alt": "Book Picture",
+            "rating": 2,
+            "numberOfReviews": 109,
+            "bookFavorited": false,
+            "id": 4,
+            "comments": [
+                {
+                    "user": "User 1",
+                    "comment": "Great Book",
+                    "rating": 4
+                },
+                {
+                    "user": "User 2",
+                    "comment": "I enjoyed reading it.",
+                    "rating": 3
+                }
+            ]
+        },
+        {
+            "name": "Book of Fire",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "author": "Lorem Ipsum",
+            "img_url": "src/assets/book_image_two.png",
+            "alt": "Book Picture",
+            "rating": 4,
+            "numberOfReviews": 204,
+            "bookFavorited": false,
+            "id": 5,
+            "comments": [
+                {
+                    "user": "User 1",
+                    "comment": "Great Book",
+                    "rating": 4
+                },
+                {
+                    "user": "User 2",
+                    "comment": "I enjoyed reading it.",
+                    "rating": 3
+                }
+            ]
+        },
+        {
+            "name": "Book of Fire",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "author": "Lorem Ipsum",
+            "img_url": "src/assets/book_image_two.png",
+            "alt": "Book Picture",
+            "rating": 3.4,
+            "numberOfReviews": 78,
+            "bookFavorited": true,
+            "id": 6,
+            "comments": [
+                {
+                    "user": "User 1",
+                    "comment": "Great Book",
+                    "rating": 4
+                },
+                {
+                    "user": "User 2",
+                    "comment": "I enjoyed reading it.",
+                    "rating": 3
+                }
+            ]
+        }
+    ]
+}

@@ -42,24 +42,45 @@
         </div>
 
         <!-- Book Comments -->
-        <div class="flex flex-col mt-10 mb-10 p-5 ">
+        <div class="flex flex-col mt-10 m-10 ">
             <h2 class="text-3xl">Reviews</h2>
         
             <!-- Loop through each comment -->
-            <div v-for="(comment, index) in book.comments" :key="index" class="flex flex-row mt-10 bg-gray-100 rounded-md align-middle text-center items-center">
-            
+            <div v-for="(comment, index) in book.comments" :key="index" class="space-y-4 md:flex md:flex-wrap md:justify-center mt-10 p-5 bg-gray-100 rounded-md md:items-center text-center">
+
                 <!-- Comment User Info -->
-                <div class="w-1/4 p-10">
-                    <img src="../../assets/user.png" alt="User Icon" class="rounded-full border border-gray-600 bg-gray-100">
+                <div class="rounded-full overflow-hidden h-60 w-60 border-r-10 mx-auto md:mx-0">
+                    <img src="/user.png" alt="User Icon" class="h-full w-full object-cover">
                 </div>
-            
+
                 <!-- Comment Info -->
-                <div class="flex flex-col text-left ml-10 e ">
-                    <p>{{ comment.user }}</p>
-                    <p>{{ comment.comment }}</p>
-                    <p>Rating: {{ comment.rating }}</p>
+                <div class="flex-1 flex flex-col text-left ml-10 justify-between text-2xl max-h-96 md:max-h-60 overflow-y-auto">
+                    <p class="italic">{{ comment.user }}</p>
+                    <p class="my-5">{{ comment.comment }}</p>
+                    
+                    <div class="flex items-center">
+                        <p class="mr-2">Rating: </p>
+                        <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">{{ comment.rating }}</p>
+                        <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">out of</p>
+                        <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">{{ book.numberOfReviews }}</p>
+                    </div>
+
                 </div>
-            
             </div>
         </div>
     </div>
@@ -92,5 +113,10 @@ export default{
 </script>
 
 <style>
+
+/* Add styles for stars */
+.text-yellow-400 {
+  color: #ffd700;
+}
 
 </style>

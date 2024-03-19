@@ -102,7 +102,7 @@ export default{
 
 
 .card {
-    background-color: rgb(159, 159, 159);
+    background-color: rgb(199, 197, 197);
     width: 510px;
     border-radius: 10px;
 }

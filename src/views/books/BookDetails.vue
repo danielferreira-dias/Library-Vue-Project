@@ -120,8 +120,32 @@
         </div> -->
 
         <CommentModal v-if="popupModal.buttonTrigger" :closePopup="() => toggleModal('buttonTrigger')">
-            <h1>Hello from Modal</h1>
+        <div class="flex flex-col items-center">
+          <h1 class="text-4xl p-5">Leave your Review</h1>
+          <div class="flex flex-col md:flex-row items-center w-full md:justify-center">
+            <div class="rounded-full overflow-hidden h-60 w-60 border-r-10 mx-auto mr-5 md:mx-r mb-10">
+              <img src="/user.png" alt="User Icon" class="h-full w-full object-cover">
+            </div>
+            <div class="flex flex-col flex-1">
+              <!-- Textarea -->
+              <textarea class="bg-slate-300 p-5 w-fulls mb-5 rounded max-h-96 md:max-h-60" name="comment" id="comment" cols="30" rows="10"></textarea>
+              <!-- Star Rating Component -->
+              <div class="flex items-center">
+                <p class="mr-2">Rating: </p>
+                <div v-for="star in 5" :key="star">
+                  <!-- Your star rating component goes here -->
+                  <!-- Example star icon: -->
+                  <svg class="w-6 h-6 text-yellow-300 fill-current" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         </CommentModal>
+
+
     </div>
     
     <!-- Loading Book -->

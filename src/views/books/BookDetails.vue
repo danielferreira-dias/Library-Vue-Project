@@ -33,14 +33,21 @@
                         <p class="text-2xl text-left p-5 border-b-2">{{ book.description }}</p>
                         
                         <!-- Book Type -->
-                        <GenreList :id="book.id" ></GenreList>
+                        <GenreList :id="book.id" class="border-b-2 pb-3" ></GenreList>
 
-                        <!-- Book PDF Options -->
-                        <div></div>
 
                         <!-- Book Extra Information -->
-                        <div class="flex mt-5">
-                            <p>Extra Information such as size</p>
+                        <div class="flex flex-row mt-5">
+                            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                                <span>Download</span>
+                            </button>
+                            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ml-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="fill-current w-4 h-4 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                                </svg>
+                                <span>Read</span>
+                            </button>
                         </div>
                     </div>
                 </div>

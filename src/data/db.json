@@ -9,6 +9,10 @@
             "rating": 4.5,
             "numberOfReviews": 60,
             "bookFavorited": false,
+            "genre": [
+                "Action",
+                "Romance"
+            ],
             "id": 1,
             "comments": [
                 {
@@ -32,6 +36,9 @@
             "rating": 4.1,
             "numberOfReviews": 32,
             "bookFavorited": false,
+            "genre": [
+                "Romance"
+            ],
             "id": 2,
             "comments": [
                 {
@@ -55,6 +62,10 @@
             "rating": 5,
             "numberOfReviews": 14,
             "bookFavorited": false,
+            "genre": [
+                "Action",
+                "Horror"
+            ],
             "id": 3,
             "comments": [
                 {
@@ -78,6 +89,11 @@
             "rating": 2,
             "numberOfReviews": 109,
             "bookFavorited": false,
+            "genre": [
+                "Action",
+                "Romance",
+                "Horror"
+            ],
             "id": 4,
             "comments": [
                 {
@@ -101,6 +117,12 @@
             "rating": 4,
             "numberOfReviews": 204,
             "bookFavorited": false,
+            "genre": [
+                "Action",
+                "Romance",
+                "Horror",
+                "Sci-fi"
+            ],
             "id": 5,
             "comments": [
                 {
@@ -124,6 +146,10 @@
             "rating": 3.4,
             "numberOfReviews": 78,
             "bookFavorited": true,
+            "genre": [
+                "Action",
+                "Romance"
+            ],
             "id": 6,
             "comments": [
                 {

@@ -25,18 +25,27 @@
                     </div>
                 </div>
 
+               
+
                 <!-- Book Desc -->
                 <div class="flex flex-1 items-center ">
                     <div class="flex flex-col">
                         <p class="text-2xl text-left p-5 border-b-2">{{ book.description }}</p>
+                        
+                        <!-- Book Type -->
+                        <GenreList :id="book.id" ></GenreList>
+
+                        <!-- Book PDF Options -->
+                        <div></div>
+
+                        <!-- Book Extra Information -->
                         <div class="flex mt-5">
                             <p>Extra Information such as size</p>
                         </div>
                     </div>
                 </div>
-              
+
             </div>
-            
         </div>
         
         <!-- Extra Info -->
@@ -100,9 +109,12 @@
 </template>
 
 <script>
+import GenreList from '../../components/GenreList.vue';
+
 export default{
     props: ['id'],
     name: 'BookDetails',
+    components: { GenreList },
     data(){
         return{
             book: null

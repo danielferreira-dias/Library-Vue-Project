@@ -33,11 +33,11 @@
                         <p class="text-2xl text-left p-5 border-b-2">{{ book.description }}</p>
                         
                         <!-- Book Type -->
-                        <GenreList :id="book.id" class="border-b-2 pb-3" ></GenreList>
+                        <GenreList :id="book.id" class="border-b-2 pb-3 w-full sm:justify-center md:justify-start" ></GenreList>
 
 
                         <!-- Book Extra Information -->
-                        <div class="flex flex-row mt-5">
+                        <div class="flex flex-row mt-5 w-full sm:justify-center md:justify-start">
                             <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
                                 <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
                                 <span>Download</span>
@@ -82,10 +82,11 @@
                 </div>
 
                 <!-- Comment Info -->
-                <div class="flex-1 flex flex-col text-left ml-10 justify-between text-2xl max-h-96 md:max-h-60 overflow-y-auto">
+                <div class="flex-1 flex flex-col text-left ml-10 justify-between text-2xl max-h-96 md:max-h-60">
                     <p class="italic">{{ comment.user }}</p>
-                    <p class="my-5">{{ comment.comment }}</p>
-                    
+                    <div class="max-h-96 md:max-h-60 overflow-y-auto">
+                        <p class="my-5">{{ comment.comment }}</p>
+                    </div>
                     <div class="flex items-center">
                         <p class="mr-2">Rating: </p>
 
@@ -106,9 +107,23 @@
                 </div>
             </div>
         </div>
+
+        <!-- Add a New Comment -->
+        <div class="flex justify-center m-5">
+            <button @click="() => toggleModal('buttonTrigger')" data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                Create a Comment
+            </button>
+        </div>
+
+        <!-- <div id="targetElement" class="p-4  text-xl fixed w-full bottom-0 left-0 right-0 text-blue-800 rounded-lg bg-blue-50 dark:bg-blue-200 dark:text-blue-800" role="alert">
+            <span class="font-medium">Added to Favorites!</span>
+        </div> -->
+
+        <CommentModal v-if="popupModal.buttonTrigger" :closePopup="() => toggleModal('buttonTrigger')">
+            <h1>Hello from Modal</h1>
+        </CommentModal>
     </div>
     
-
     <!-- Loading Book -->
     <div v-else>
         <p>Book Loading</p>
@@ -117,14 +132,32 @@
 
 <script>
 import GenreList from '../../components/GenreList.vue';
+import CommentModal from '../../modals/CommentModal.vue';
+import { ref } from 'vue';
 
 export default{
     props: ['id'],
     name: 'BookDetails',
-    components: { GenreList },
+    components: { GenreList, CommentModal },
+    
+    setup() {
+        const popupModal = ref({
+            buttonTrigger: false,
+        });
+
+        const toggleModal = (trigger) => {
+            popupModal.value[trigger] = !popupModal.value[trigger];
+        }
+
+        return {
+            popupModal,
+            toggleModal
+        }
+    },
+
     data(){
         return{
-            book: null
+            book: null,
         }
     },  
     mounted() {
@@ -134,9 +167,12 @@ export default{
             this.book = data;
         })
         .catch(err => console.log(err.message));
+    },
+    methods: {
     }
 }
 </script>
+
 
 <style>
 

@@ -40,6 +40,9 @@
 </template>
 
 <script>
+import { db } from '../data/firebaseConfig'
+import { collection, getDocs } from 'firebase/firestore';
+
 export default{
     name: 'Library',
     props:{
@@ -57,11 +60,9 @@ export default{
             books: []
         }
     },
-    mounted(){
-        fetch('http://localhost:3000/books/')
-        .then(res => res.json())
-        .then(data => this.books = data)
-        .catch(err => console.log(err.message))
+    mounted() {
+        this.fetchBooks();
+        
     },
     computed: {
         filteredBooks() {
@@ -79,9 +80,33 @@ export default{
         handleClick( book ){
             book.bookFavorited = !book.bookFavorited
             // Use Vue.set or this.$set to make Vue detect the change
-        }
+        },
+        async fetchBooks(){
+            try {
+              const querySnapshot = await getDocs(collection(db, 'books'));
+              querySnapshot.forEach((doc) => {
+                const booksList = {
+                    id: doc.id,
+                    name: doc.data().name,
+                    alt: doc.data().alt,
+                    author: doc.data().author,
+                    description: doc.data().description,
+                    img_url: doc.data().img_url,
+                    isFavorited: doc.data().isFavorited,
+                    numberOfReviews: doc.data().numberOfReviews,
+                    rating: doc.data().rating,
+                    comments: doc.data().comments,
+                    genre: doc.data().genre,
+                }
+                this.books.push(booksList)
+              });
+            } catch (error) {
+              console.error("Error fetching books:", error);
+            }
+        },
     }
 }
+
 </script>
 
 <style>

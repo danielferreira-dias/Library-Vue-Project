@@ -39,6 +39,7 @@
 import Navbar from '../components/Navbar.vue';
 import LibraryList from '../components/LibraryList.vue';
 
+
 export default {
     name: 'Home',
     components: { Navbar, LibraryList }

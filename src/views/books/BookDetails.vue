@@ -158,9 +158,16 @@
 import GenreList from '../../components/GenreList.vue';
 import CommentModal from '../../modals/CommentModal.vue';
 import { ref } from 'vue';
+import { db } from '../../data/firebaseConfig';
+import { doc, collection, getDoc } from 'firebase/firestore';
 
 export default{
-    props: ['id'],
+    props: {
+       id: {
+         type: String,
+         required: true
+       }
+     },
     name: 'BookDetails',
     components: { GenreList, CommentModal },
     
@@ -178,21 +185,32 @@ export default{
             toggleModal
         }
     },
-
     data(){
         return{
             book: null,
         }
     },  
     mounted() {
-    fetch('http://localhost:3000/books/' + this.id)
-        .then(res => res.json())
-        .then(data => {
-            this.book = data;
-        })
-        .catch(err => console.log(err.message));
+        this.fetchSpecificBook();
     },
     methods: {
+        async fetchSpecificBook() {
+          try {
+            const bookRef = doc(db, 'books', this.id);
+            const bookSnapshot = await getDoc(bookRef);
+
+            // Check if the document exists
+            if (bookSnapshot.exists()) {
+              // Access the data of the book using .data() method
+              this.book = bookSnapshot.data();
+              console.log('Specific book data:', this.book);
+            } else {
+              console.log('Book document does not exist!');
+            }
+          } catch (error) {
+            console.error("Error fetching specific book:", error);
+          }
+        }
     }
 }
 </script>

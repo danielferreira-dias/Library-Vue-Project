@@ -69,6 +69,7 @@ export default{
             if (this.topFive) {
               return this.books.sort((a, b) => b.rating - a.rating).slice(0, 5);
             } else if (this.topFavorite) {
+            console.log("teste")
               return this.books.filter(book => book.isFavorited);
             } else {
               // Return all books

@@ -1,7 +1,7 @@
 <template>
     <div v-if="books.length" class="library-grid">
         <div v-for="(item, index) in filteredBooks" :key="index" class="card transition ease-in-out delay-0 hover:translate-y-1 hover:scale-110 duration-300 ">
-                <router-link :to="{ name: 'BookDetails' , params: { id: item.id }}">
+                <router-link :to="{ name: 'BookDetails' , params: { id: 'item.id' }}">
                     <div class="card-title">
                         <h2 style="color: white;"> {{ item.name }}</h2>
                     </div>

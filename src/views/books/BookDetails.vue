@@ -33,7 +33,7 @@
                         <p class="text-2xl text-left p-5 border-b-2">{{ book.description }}</p>
                         
                         <!-- Book Type -->
-                        <GenreList :id="book.id" class="border-b-2 pb-3 w-full sm:justify-center md:justify-start" ></GenreList>
+                        <GenreList :id="id" class="border-b-2 pb-3 w-full sm:justify-center md:justify-start" ></GenreList>
 
 
                         <!-- Book Extra Information -->
@@ -203,7 +203,6 @@ export default{
             if (bookSnapshot.exists()) {
               // Access the data of the book using .data() method
               this.book = bookSnapshot.data();
-              console.log('Specific book data:', this.book);
             } else {
               console.log('Book document does not exist!');
             }

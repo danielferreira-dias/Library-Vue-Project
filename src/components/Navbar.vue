@@ -5,7 +5,11 @@
         </div>
         <div class="navbar-Option-Right">
           <div class="navbar-Option">
-              <button>Home</button>
+              <button>
+                <router-link :to="{ name: 'Home'}">
+                  Home
+                </router-link>
+              </button>
           </div>
           <div class="navbar-Option">
               <button>

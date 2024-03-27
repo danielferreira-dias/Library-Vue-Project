@@ -13,12 +13,41 @@
             <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Book Author</label>
             <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
+        <div class="mb-6 w-full p-5">
+            <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Book description</label>
+            <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+        <div class="mb-6 w-full p-5">
+            <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Book Image</label>
+            <input type="file" accept="image/jpeg" @change=uploadImage>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-
+    name: 'addNewBook',
+    data(){
+        return {
+            newBook: {
+                name: null,
+                author: null,
+                description: null,
+                image: null,
+            }
+        }
+    },
+    methods:{
+        uploadImage(e){
+            const image = e.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(image);
+            reader.onload = e =>{
+                this.newBook.image = e.target.result;
+                console.log(this.newBook.image);
+            };
+        }
+    }
 }
 </script>
 

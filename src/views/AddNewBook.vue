@@ -1,0 +1,27 @@
+<template>
+    <div class="mt-10">
+        <p> When you add a new Book it will be directly added into the Database. The database being used is Firebase store.</p>
+        <h2>What is Firebase?</h2>
+        <p>Google Firebase is a set of cloud-based development tools that helps mobile app developers build, deploy and scale their apps.</p>
+    </div>
+    <div class="flex justify-start flex-col w-1/2 bg-gray-500 border-2 m-auto">
+        <div class="mb-6 w-full p-5">
+            <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Book Name</label>
+            <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+        <div class="mb-6 w-full p-5">
+            <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Book Author</label>
+            <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>

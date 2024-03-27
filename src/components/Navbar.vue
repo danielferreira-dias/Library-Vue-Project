@@ -1,7 +1,9 @@
 <template>
     <div class="navbar">
         <div class="navbar-Option">
-          <img src="../assets/vue.svg" alt="">
+          <router-link :to="{ name: 'New Book'}">
+            <img src="../assets/vue.svg" alt="">
+          </router-link>
         </div>
         <div class="navbar-Option-Right">
           <div class="navbar-Option">

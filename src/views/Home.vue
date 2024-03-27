@@ -8,13 +8,13 @@
         Top 5 most well Reviewed
       </div>
       
-      <div class="mb-10">
+      <div class="mb-10 p-5">
         <!-- Display Top 5 most well-reviewed books -->
         <LibraryList :topFive="true" :topFavorite="false"/>
       </div>
     </div>
     
-    <div class="mb-10">
+    <div class="mb-10 p-5">
         <div class="text-3xl text-left text-black p-6 ml-1">
           Your Library
         </div>
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="mb-10">
+    <div class="mb-10 p-5">
         <div class="text-3xl text-left text-black p-6 ml-1">
           Your Favorites
         </div>
